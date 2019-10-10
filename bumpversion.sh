@@ -40,7 +40,7 @@ if [ -f VERSION ]; then
     echo "" >> tmpfile
     cat CHANGES >> tmpfile
     mv tmpfile CHANGES
-    git add CHANGES VERSION
+    git add CHANGES VERSION dry_terrascript/VERSION
     git commit -m "Version bump to $INPUT_STRING"
     git tag -a -m "Tagging version $INPUT_STRING" "v$INPUT_STRING"
     git push origin --tags
