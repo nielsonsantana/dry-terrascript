@@ -8,11 +8,15 @@ code on different projects.
 
 # Instalation
 
-Execute the fallowing command to install dry-terrascript
+Execute the fallowing command to install dry-terrascript:
 
     pip install -e git://github.com/nielsonsantana/dry-terrascript.git#egg=dry_terrascript
 
 
 # Usage
 
-# 
+```python
+from dry_terrascript.images import do_ubuntu_18_04_x64
+from dry_terrascript.servers import do_server
+
+```
