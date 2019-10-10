@@ -33,6 +33,7 @@ if [ -f VERSION ]; then
     fi
     echo "Will set new version to be $INPUT_STRING"
     echo $INPUT_STRING > VERSION
+    echo $INPUT_STRING > dry_terrascript/VERSION
     echo "Version $INPUT_STRING:" > tmpfile
     git log --no-merges --date=iso --pretty=format:" - %cd #%h - %aN - %s" "v$BASE_STRING"...HEAD | sed -e 's/ -0300//g' | sed -e 's/ +0000//g' >> tmpfile
     echo "" >> tmpfile
@@ -40,7 +41,6 @@ if [ -f VERSION ]; then
     cat CHANGES >> tmpfile
     mv tmpfile CHANGES
     git add CHANGES VERSION
-    cp -rf VERSION dry_terrascript/VERSION
     git commit -m "Version bump to $INPUT_STRING"
     git tag -a -m "Tagging version $INPUT_STRING" "v$INPUT_STRING"
     git push origin --tags
