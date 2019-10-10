@@ -55,6 +55,7 @@ else
     if [ "$RESPONSE" = "YES" ]; then RESPONSE="y"; fi
     if [ "$RESPONSE" = "y" ]; then
         echo "0.1.0" > VERSION
+        cp VERSION dry_terrascript/VERSION
         echo "Version 0.1.0" > CHANGES
         git log --no-merges --date=iso --pretty=format:" - %cd #%h - %aN - %s" >> CHANGES
         echo "" >> CHANGES
