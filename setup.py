@@ -35,6 +35,7 @@ setup(
     author_email='nielsonnas@gmail.com',
     maintainer='',
     license='MIT',
+    data_files=[('', ['dry_terrascript/VERSION'])],
     packages=['dry_terrascript'],
     zip_safe=False,
 )
